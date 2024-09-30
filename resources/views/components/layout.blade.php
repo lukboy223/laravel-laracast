@@ -92,8 +92,7 @@
                 <div class="border-t border-gray-700 pb-3 pt-4">
                     <div class="flex items-center px-5">
                         <div class="flex-shrink-0">
-                            <img class="h-10 w-10 rounded-full" src="https://i.postimg.cc/vTK1gD4P/anime.jpg"
-                                alt="">
+                            <img class="h-10 w-10 rounded-full" src="https://i.postimg.cc/vTK1gD4P/anime.jpg" alt="">
                         </div>
                         <div class="ml-3">
                             <div class="text-base font-medium leading-none text-white">death</div>
@@ -117,8 +116,10 @@
         </nav>
 
         <header class="bg-white shadow">
-            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 sm:flex sm:justify-between">
                 <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ $heading }}</h1>
+
+                <x-button href='/jobs/create'>Create Job</x-button>
             </div>
         </header>
         <main>
