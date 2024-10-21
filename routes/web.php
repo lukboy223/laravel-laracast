@@ -5,6 +5,14 @@ use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
+
+Route::get('test', function () {
+    \Illuminate\Support\Facades\Mail::to('jeff@mail.com')->send(
+        new \App\Mail\JobPosted()
+    );
+    return 'done';
+});
+
 Route::view('/', 'home');
 Route::view('/contact', 'contact');
 
@@ -21,7 +29,7 @@ Route::get('/jobs/{job}/edit',  [JobController::class,              'edit'])
 Route::patch('/jobs/{job}',     [JobController::class,              'update'])
     ->middleware('auth')
     ->can('edit', 'job');
-    
+
 Route::delete('/jobs/{job}',    [JobController::class,              'destroy'])
     ->middleware('auth')
     ->can('edit', 'job');
