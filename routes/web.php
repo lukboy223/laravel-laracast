@@ -3,15 +3,19 @@
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\SessionController;
+use App\Jobs\translateJob;
+use App\Models\Job;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('test', function () {
-    \Illuminate\Support\Facades\Mail::to('jeff@mail.com')->send(
-        new \App\Mail\JobPosted()
-    );
+route::get('test', function (){
+
+    $job = Job::first();
+   translateJob::dispatch($job);
+
     return 'done';
 });
+
 
 Route::view('/', 'home');
 Route::view('/contact', 'contact');
